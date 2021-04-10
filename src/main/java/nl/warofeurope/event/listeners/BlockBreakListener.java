@@ -24,10 +24,20 @@ public class BlockBreakListener implements Listener {
 
         Optional<Teams> fromLocation = Teams.getFromLocation(location);
         if (EventPlugin.getInstance().game.started && fromLocation.isPresent()){
+            Optional<Teams> fromPlayer = Teams.getFromPlayer(player);
             event.setCancelled(true);
             Teams teams = fromLocation.get();
             if (teams.nexusLives >= 0){
-                teams.nexusLives--;
+                if (fromPlayer.isPresent()){
+                    Teams playerTeam = fromPlayer.get();
+                    if (playerTeam.equals(teams)){
+                        player.sendMessage(color("&cJe kan niet je eigen nexus hakken."));
+                    } else {
+                        teams.nexusLives--;
+                    }
+                } else {
+                    teams.nexusLives--;
+                }
             }
 
             if (teams.nexusLives == 0){
