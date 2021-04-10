@@ -6,10 +6,13 @@ import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Description;
 import nl.warofeurope.event.EventPlugin;
 import nl.warofeurope.event.ScoreboardHandler;
+import nl.warofeurope.event.Teams;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Optional;
 
 import static nl.warofeurope.event.utils.Colors.color;
 
@@ -27,33 +30,22 @@ public class TellLocationCommand extends BaseCommand {
         if (!(sender instanceof Player))
             return;
         Player player = (Player) sender;
-        ScoreboardHandler.Teams teams = this.getPlayer(player);
+        Optional<Teams> fromPlayer = Teams.getFromPlayer(player);
+        if (fromPlayer.isPresent()){
+            Location location = player.getLocation();
+            Teams teams = fromPlayer.get();
 
-        Location location = player.getLocation();
+            int x = location.getBlockX();
+            int y = location.getBlockY();
+            int z = location.getBlockZ();
 
-        int x = location.getBlockX();
-        int y = location.getBlockY();
-        int z = location.getBlockZ();
+            String message = color("&e" + player.getName() + ": " + x + ", " + y + ", " + z);
 
-        String message = color("&e" + player.getName() + ": " + x + ", " + y + ", " + z);
-
-        if (teams != null){
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()){
                 if (teams.getPlayers().contains(onlinePlayer)){
                     onlinePlayer.sendMessage(message);
                 }
             }
         }
-
-    }
-
-    private ScoreboardHandler.Teams getPlayer(Player player){
-        for (ScoreboardHandler.Teams teams : ScoreboardHandler.Teams.getValues()){
-            if (teams.getPlayers().contains(player)){
-                return teams;
-            }
-        }
-
-        return null;
     }
 }

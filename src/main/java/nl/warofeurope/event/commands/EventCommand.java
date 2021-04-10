@@ -29,22 +29,22 @@ public class EventCommand extends BaseCommand {
     @CommandAlias("startevent")
     @CommandPermission("event.startevent")
     public void start(CommandSender sender){
-        this.broadcast("&4&l[Event] &cDe Kingdom FFA begint over &4&l1 &cminuut!");
+        this.broadcast("&4&l[Event] &cHet Nexus event begint over &4&l1 &cminuut!");
         new SyncDelayedTask(20 * 30, () -> {
-            this.broadcast("&4&l[Event] &cDe Kingdom FFA begint over &4&l30 &cseconden!");
+            this.broadcast("&4&l[Event] &cHet Nexus event begint over &4&l30 &cseconden!");
             new SyncDelayedTask(20 * 10, () -> {
-                this.broadcast("&4&l[Event] &cDe Kingdom FFA begint over &4&l10 &cseconden!");
+                this.broadcast("&4&l[Event] &cHet Nexus event begint over &4&l10 &cseconden!");
                 new SyncDelayedTask(20 * 5, () -> {
-                    this.broadcast("&4&l[Event] &cDe Kingdom FFA begint over &4&l5 &cseconden!");
+                    this.broadcast("&4&l[Event] &cHet Nexus event begint over &4&l5 &cseconden!");
                     new SyncDelayedTask(20 * 3, () -> {
-                        this.broadcast("&4&l[Event] &cDe Kingdom FFA begint over &4&l3 &cseconden!");
+                        this.broadcast("&4&l[Event] &cHet Nexus event begint over &4&l3 &cseconden!");
                         new SyncDelayedTask(20 * 2, () -> {
-                            this.broadcast("&4&l[Event] &cDe Kingdom FFA begint over &4&l2 &cseconden!");
+                            this.broadcast("&4&l[Event] &cHet Nexus event begint over &4&l2 &cseconden!");
                             new SyncDelayedTask(20, () -> {
-                                this.broadcast("&4&l[Event] &cDe Kingdom FFA begint over &4&l1 &cseconden!");
+                                this.broadcast("&4&l[Event] &cHet Nexus event begint over &4&l1 &cseconden!");
                                 new SyncDelayedTask(20, () -> {
                                     this.eventPlugin.game.started = true;
-                                    this.broadcast("&4&l[Event] &cDe Kingdom FFA is begonnen! &4&lSUCCES!");
+                                    this.broadcast("&4&l[Event] &cHet Nexus event is begonnen! &4&lSUCCES!");
                                     for (Player player : Bukkit.getOnlinePlayers()){
                                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "kit event " + player.getName());
                                     }
@@ -77,7 +77,7 @@ public class EventCommand extends BaseCommand {
             player.getActivePotionEffects().forEach(potionEffect -> player.removePotionEffect(potionEffect.getType()));
             player.setHealth(20);
             player.setFoodLevel(20);
-            player.setGameMode(GameMode.ADVENTURE);
+            player.setGameMode(GameMode.SURVIVAL);
         }
     }
 }
