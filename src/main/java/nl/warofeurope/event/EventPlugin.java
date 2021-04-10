@@ -7,6 +7,7 @@ import nl.warofeurope.event.listeners.ChatListener;
 import nl.warofeurope.event.listeners.DeathListener;
 import nl.warofeurope.event.listeners.JoinListener;
 import nl.warofeurope.event.models.Game;
+import nl.warofeurope.event.runnables.PlayerLocationCheckRunnable;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -36,6 +37,8 @@ public class EventPlugin extends JavaPlugin {
         );
 
         this.game = new Game(this);
+
+        new PlayerLocationCheckRunnable().runTaskTimerAsynchronously(this, 0L, 100L);
     }
 
     private void registerListeners(Listener... listeners){

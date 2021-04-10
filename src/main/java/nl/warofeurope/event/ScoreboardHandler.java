@@ -30,9 +30,9 @@ public class ScoreboardHandler {
         final int[] start = {17};
         Objective objective = this.scoreboard.getObjective("sidebar");
 
-        List<Teams> teams = Arrays.stream(Teams.getValues()).sorted((o1, o2) -> o2.getPlayers().size() - o1.getPlayers().size()).collect(Collectors.toList());
+        List<Teams> teams = Arrays.stream(Teams.getValues()).sorted((o1, o2) -> o2.nexusLives - o1.nexusLives).collect(Collectors.toList());
         for (Teams team : teams) {
-            replaceScore(objective, start[0], color(team.getDisplay() + "&f: &6" + team.getPlayers().size() + " &7&o(Kills: " + team.getKills() + ")"));
+            replaceScore(objective, start[0], color(team.getDisplay() + "&f: &6" + team.nexusLives + " &7&o(Kills: " + team.getKills() + ")"));
             start[0]--;
         }
     }
@@ -42,7 +42,7 @@ public class ScoreboardHandler {
 
         Objective boardObject = this.scoreboard.registerNewObjective("sidebar", "dummy");
         boardObject.setDisplaySlot(DisplaySlot.SIDEBAR);
-        boardObject.setDisplayName(color("&6&lLand Aantallen &7(Levend)"));
+        boardObject.setDisplayName(color("&6&lNexus Levens"));
 
         for (Teams internalTeam : Teams.getValues()){
             Team team = this.scoreboard.registerNewTeam("t-" + internalTeam.toString());
@@ -170,7 +170,7 @@ public class ScoreboardHandler {
             this.kills = 0;
             this.spawnLocations = spawnLocation;
             this.players = new HashSet<>();
-            this.nexusLives = 50;
+            this.nexusLives = 100;
             this.nexusLocation = nexusLocation;
         }
 
