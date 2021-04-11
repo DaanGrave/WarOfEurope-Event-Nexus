@@ -11,67 +11,67 @@ import java.util.Set;
 
 public enum Teams {
     NEDERLAND(
-            "&6[Ned]&r",
+            "&6[Ned]",
             "&6Nederland",
             new Location(Bukkit.getWorld("world"), -17.0, 68.0, 104.0, 180.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), -17.0, 68.0, 102.0, 359.0f, 0.0f)
     ),
     BELGIE(
-            "&e[Bel]&r",
+            "&e[Bel]",
             "&eBelgi\u00eb",
             new Location(Bukkit.getWorld("world"), 26.0, 69.0, 103.0, 180.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), 26.0, 69.0, 101.0, 359.0f, 0.0f)
     ),
     CYPRUS(
-            "&f[Cyp]&r",
+            "&f[Cyp]",
             "&fCyprus",
             new Location(Bukkit.getWorld("world"), 68.0, 68.0, 103.0, 180.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), 68.0, 67.0, 101.0, 359.0f, 0.0f)
     ),
     KOSOVO(
-            "&1[Kos]&r",
+            "&1[Kos]",
             "&1Kosovo",
             new Location(Bukkit.getWorld("world"), 97.0, 68.0, 58.0, 90.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), 95.0, 68.0, 58.0, 269.0f, 0.0f)
     ),
     IJSLAND(
-            "&b[IJs]&r",
+            "&b[IJs]",
             "&bIJsland",
             new Location(Bukkit.getWorld("world"), 100.0, 69.0, 28.0, 90.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), 98.0, 69.0, 28.0, 269.0f, 0.0f)
     ),
     ZWEDEN(
-            "&9[Zwe]&r",
+            "&9[Zwe]",
             "&9Zweden",
             new Location(Bukkit.getWorld("world"), 99.0, 68.0, -23.0, 90.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), 97.0, 68.0, -23.0, 269.0f, 0.0f)
     ),
     MONACO(
-            "&d[Mon]&r",
+            "&d[Mon]",
             "&dMonaco",
             new Location(Bukkit.getWorld("world"), 99.0, 68.0, -55.0, 90.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), 97.0, 68.0, -55.0, 89.0f, 0.0f)
     ),
     TURKIJE(
-            "&5[Tur]&r",
+            "&5[Tur]",
             "&5Turkije",
             new Location(Bukkit.getWorld("world"), 66.0, 68.0, -100.0, 360.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), 66.0, 68.0, -98.0, 269.0f, 0.0f)
     ),
     ITALIE(
-            "&2[Ita]&r",
+            "&2[Ita]",
             "&2Itali\u00eb",
             new Location(Bukkit.getWorld("world"), 26.0, 67.0, -104.0, 360.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), 26.0, 69.0, -102.0, 89.0f, 0.0f)
     ),
     RUSLAND(
-            "&4[Rus]&r",
+            "&4[Rus]",
             "&4Rusland",
             new Location(Bukkit.getWorld("world"), -28.0, 69.0, -105.0, 360.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), -29.0, 69.0, -103.0, 89.0f, 0.0f)
     ),
     SPANJE(
-            "&0[Spa]&r",
+            "&0[Spa]",
             "&0Spanje",
             new Location(Bukkit.getWorld("world"), -70.0, 69.0, -106.0, 360.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), -70.0, 69.0, -104.0, 359.0f, 0.0f)
@@ -83,19 +83,19 @@ public enum Teams {
             new Location(Bukkit.getWorld("world"), -104.0, 71.0, -62.0, 180.0f, 0.0f)
     ),
     ENGELAND(
-            "&7[Eng]&r",
+            "&7[Eng]",
             "&7Engeland",
             new Location(Bukkit.getWorld("world"), -104.0, 72.0, -28.0, 270.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), -102.0, 72.0, -28.0, 180.0f, 0.0f)
     ),
     FRANKRIJK(
-            "&8[Fra]&r",
+            "&8[Fra]",
             "&8Frankrijk",
             new Location(Bukkit.getWorld("world"), -101.0, 73.0, 27.0, 270.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), -99.0, 73.0, 27.0, 180.0f, 0.0f)
     ),
     FINLAND(
-            "&3[Fin]&r",
+            "&3[Fin]",
             "&3Finland",
             new Location(Bukkit.getWorld("world"), -98.0, 71.0, 65.0, 270.0f, 0.0f),
             new Location(Bukkit.getWorld("world"), -96.0, 71.0, 65.0, 89.0f, 0.0f)

@@ -6,12 +6,14 @@ import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Subcommand;
 import nl.warofeurope.event.EventPlugin;
+import nl.warofeurope.event.Teams;
 import nl.warofeurope.event.models.Game;
 import nl.warofeurope.event.utils.runnables.SyncDelayedTask;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.scoreboard.Team;
 
 import static nl.warofeurope.event.utils.Colors.color;
 
@@ -55,6 +57,13 @@ public class EventCommand extends BaseCommand {
                 });
             });
         });
+    }
+
+    @Subcommand("listteams")
+    public void listteams(CommandSender sender){
+        for (Teams teams : Teams.getValues()){
+            sender.sendMessage(color(teams.display + " &r" + teams.getPlayers().size()));
+        }
     }
 
     private void broadcast(String message){
